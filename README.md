@@ -1,4 +1,4 @@
-# MoveIt! - Tela de Login
+# Stock Master! - Tela de Login
 
 Este projeto é uma tela de login moderna e responsiva, desenvolvida com **Angular**. A interface segue um design limpo e intuitivo, facilitando a autenticação do usuário.
 
