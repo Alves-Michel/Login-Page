@@ -16,7 +16,8 @@ Este projeto é uma tela de login moderna e responsiva, desenvolvida com **Angul
 - Layout responsivo e moderno
 
 ## 📸 Captura de Tela
-![image](https://github.com/user-attachments/assets/0c956643-4b8f-4753-84bf-91c89840e817)
+![image]![image](https://github.com/user-attachments/assets/681cd468-3dd2-4773-a2f9-75255479f32f)
+
 
 
 ## 🛠 Como Executar o Projeto
