@@ -1,27 +1,50 @@
-# LoginPage
+# MoveIt! - Tela de Login
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.13.
+Este projeto é uma tela de login moderna e responsiva, desenvolvida com **Angular**. A interface segue um design limpo e intuitivo, facilitando a autenticação do usuário.
 
-## Development server
+## 🚀 Tecnologias Utilizadas
+- **Angular** para a construção da interface
+- **TypeScript** para a lógica do front-end
+- **HTML e SCSS** para a estrutura e estilos
+- **Bootstrap/Tailwind CSS** (se aplicável) para o design responsivo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🎯 Funcionalidades
+- Entrada de e-mail e senha com validação
+- Ícones interativos nos campos de entrada
+- Botões estilizados para login e cadastro
+- Link para recuperação de senha
+- Layout responsivo e moderno
 
-## Code scaffolding
+## 📸 Captura de Tela
+![image](https://github.com/user-attachments/assets/0c956643-4b8f-4753-84bf-91c89840e817)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## 🛠 Como Executar o Projeto
+1. Clone este repositório:
+   ```sh
+   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   ```
+2. Acesse a pasta do projeto:
+   ```sh
+   cd nome-do-repositorio
+   ```
+3. Instale as dependências:
+   ```sh
+   npm install
+   ```
+4. Inicie o servidor de desenvolvimento:
+   ```sh
+   ng serve
+   ```
+5. Acesse no navegador: `http://localhost:4200/`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🤝 Contribuições
+Se quiser contribuir com melhorias ou novas funcionalidades, sinta-se à vontade para abrir um **Pull Request** ou relatar **Issues**.
 
-## Running unit tests
+## 📜 Licença
+Este projeto está sob a licença [MIT](LICENSE).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
