@@ -1,5 +1,5 @@
-import { Component, forwardRef, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { Component, Input, forwardRef } from '@angular/core';
+import { ControlValueAccessor, FormGroup, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 
 type InputTypes = "text" | "email" | "password"
 
@@ -16,16 +16,14 @@ type InputTypes = "text" | "email" | "password"
       multi: true
     }
   ],
-
   templateUrl: './primary-input.component.html',
   styleUrl: './primary-input.component.scss'
 })
 export class PrimaryInputComponent implements ControlValueAccessor {
   @Input() type: InputTypes = "text";
-  @Input() formName: string = "";
-  @Input() placeHolder: string = "";
+  @Input() placeholder: string = "";
   @Input() label: string = "";
-  @Input() inputName: string = ""
+  @Input() inputName: string = "";
 
   value: string = ''
   onChange: any = () => {}
@@ -36,21 +34,17 @@ export class PrimaryInputComponent implements ControlValueAccessor {
     this.onChange(value)
   }
 
-  writeValue(value: any): void{
+  writeValue(value: any): void {
     this.value = value
-
   }
 
   registerOnChange(fn: any): void {
-      this.onChange = fn
+    this.onChange = fn
   }
 
   registerOnTouched(fn: any): void {
-      this.onTouched = fn
+    this.onTouched = fn
   }
 
-  setDisabledState(isDisabled: boolean): void {
-
-  }
-
+  setDisabledState(isDisabled: boolean): void {}
 }
