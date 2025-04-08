@@ -7,7 +7,7 @@ import { LoginService } from '../../service/login.service';
 import { ToastrService } from 'ngx-toastr';
 
 interface LoginForm {
-  email: FormControl,
+  username: FormControl,
   password: FormControl
 }
 
@@ -34,16 +34,30 @@ export class LoginComponent {
     private toastService: ToastrService
   ){
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
+      username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
     })
   }
 
-  submit(){
-    this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
-      next: () => this.toastService.success("Login feito com sucesso!"),
+  submit() {
+    if(this.loginForm.invalid){
+      this.toastService.error("Preencha todos os campos corretamente!")
+      return;
+    }
+    //console.log(this.loginForm.value); // 👈 isso aqui
+    this.loginService.login(
+      this.loginForm.value.username,
+      this.loginForm.value.password
+    ).subscribe({
+      next: () => {
+        this.toastService.success("Login feito com sucesso!");
+
+
+        this.router.navigate(['stock-master']);
+
+      },
       error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
-    })
+    });
   }
 
   navigate(){
