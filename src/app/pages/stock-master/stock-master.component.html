@@ -1,1 +1,53 @@
-<p>stock-master works!</p>
+<div class="sidenav" [ngClass]="{ 'sidenav-collapsed': collapsed }">
+  <div class="logo-container">
+    <button class="logo" (click)="toggleSidebar()"></button>
+    <div class="logo-text">Usuário</div>
+    <button class="btn-close" (click)="toggleSidebar()">
+      <i class="fal fa-times close-icon"></i>
+    </button>
+  </div>
+
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item" *ngFor="let item of navData">
+      <!-- Item sem submenu -->
+      <a
+        class="sidenav-nav-link"
+        *ngIf="!item.children"
+        [routerLink]="item.routeLink"
+        routerLinkActive="active"
+      >
+      <img class="link-icon-img" *ngIf="item.image" [src]="item.image" alt="icon" />
+        <span class="sidenav-link-text">{{ item.label }}</span>
+      </a>
+
+
+      <!-- Item com submenu -->
+      <div *ngIf="item.children">
+        <a
+          class="sidenav-nav-link"
+          (click)="item.expanded = !item.expanded"
+        >
+          <i
+            class="link-icon"
+            [ngClass]="{ 'rotated': item.expanded }"
+          ></i>
+          <span class="sidenav-link-text">{{ item.label }}</span>
+        </a>
+
+        <ul *ngIf="item.expanded && !collapsed">
+          <li *ngFor="let child of item.children" class="submenu-item">
+            <a
+              class="sidenav-nav-link"
+              [routerLink]="child.routeLink"
+              routerLinkActive="active"
+            >
+            <img class="link-icon-img" *ngIf="item.image" [src]="item.image" alt="icon" />
+              <span class="sidenav-link-text">{{ child.label }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+  </ul>
+</div>
