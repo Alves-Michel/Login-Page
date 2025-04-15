@@ -26,11 +26,11 @@ export const navbarData : NavItem[] = [
     image: 'assets/icons/estoque-icon.png',
 
     children: [
-      { routeLink : 'estoque/produtos', label : 'Produtos'},
-      { routeLink : 'estoque/categorias', label : 'Categorias'},
-      { routeLink : 'estoque/entrada&saida', label : 'Entrada E Saida'},
-      { routeLink : 'estoque/fornecedores', label : 'Fornecedores'},
-      { routeLink : 'estoque/relatorio', label : 'Relatorio'}
+      { label: 'Produtos', routeLink: '/estoque/produtos' },
+      { label: 'Categorias', routeLink: '/estoque/categorias' },
+      { label: 'Entrada E Saida', routeLink: '/estoque/movimentacoes' },
+      { label: 'Fornecedores', routeLink: '/estoque/fornecedores' },
+      { label: 'Relatorio', routeLink: '/estoque/relatorio' }
 
     ]
   },
@@ -38,7 +38,6 @@ export const navbarData : NavItem[] = [
     routeLink: '/vendas',
     icon: 'fal fa-chart-bar',
     label: 'VENDAS',
-    expanded: false,
     image: 'assets/icons/vendas-icon.png',
     children: [
       { routeLink : 'vendas/pedidos', label : 'Pedidos'},
@@ -58,9 +57,9 @@ export const navbarData : NavItem[] = [
   {
     routeLink: '/administrador',
     icon: 'fal fa-file',
-    label: 'ADMINISTRADDOR',
+    label:'ADMINISTRADOR',
     expanded: false,
-    image: 'assets/icons/pdv-icon.png',
+    image: 'assets/icons/adm-icon.png',
     children: [
       { routeLink : 'aministracao/usuaario', label : 'Usuários'},
       { routeLink : 'aministracao/logs', label : 'Logs de Sistema'},
@@ -75,5 +74,7 @@ export const navbarData : NavItem[] = [
     label: 'SETTINGS',
     image: 'assets/icons/config-icon.png',
   }
+
 ];
+
 

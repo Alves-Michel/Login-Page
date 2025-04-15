@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
 })
 export class StockMasterComponent {
 
-  collapsed: boolean = false; // ou false, dependendo da lógica
+  collapsed: boolean = false;
   navData = navbarData;
 
   toggleCollapse() {
