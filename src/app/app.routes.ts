@@ -6,21 +6,30 @@ import { authGuard } from './guards/auth.guard';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo:'login',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
-
   {
-    path: "login",
-    component : LoginComponent
+    path: 'login',
+    component: LoginComponent
   },
-
   {
     path: 'stock-master',
     canActivate: [authGuard],
     loadComponent: () =>
-      import('./pages/stock-master/stock-master.component').then(m => m.StockMasterComponent)
+      import('./pages/stock-master/stock-master.component').then(m => m.StockMasterComponent),
+    children: [
+      {
+        path: 'estoque/produtos',
+        loadComponent: () =>
+          import('./pages/estoque/produtos/produtos.component').then(m => m.ProdutosComponent)
+      },
+      {
+        path: 'estoque/categorias',
+        loadComponent: () =>
+          import('./pages/estoque/categorias/categorias.component').then(m => m.CategoriasComponent)
+      },
+      // outros filhos aqui...
+    ]
   }
-
-
 ];

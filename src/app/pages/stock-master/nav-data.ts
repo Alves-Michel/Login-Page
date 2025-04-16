@@ -13,24 +13,24 @@ interface NavItem {
 
 export const navbarData : NavItem[] = [
   {
-    routeLink: '/dashboard',
+    routeLink: '/stock-master/dashboard',
     icon: 'fal fa-home',
     label: 'DASHBOARD',
-     image: 'assets/icons/dashboard-icon.png'
+     image: 'assets/icons/dashboard.png'
   },
   {
     routeLink: '',
     icon: 'fal fa-box',
     label: 'ESTOQUE',
     expanded: false,
-    image: 'assets/icons/estoque-icon.png',
+    image: 'assets/icons/ready-stock.png',
 
     children: [
-      { label: 'Produtos', routeLink: '/estoque/produtos' },
-      { label: 'Categorias', routeLink: '/estoque/categorias' },
-      { label: 'Entrada E Saida', routeLink: '/estoque/movimentacoes' },
-      { label: 'Fornecedores', routeLink: '/estoque/fornecedores' },
-      { label: 'Relatorio', routeLink: '/estoque/relatorio' }
+      { label: 'Produtos', routeLink: '/stock-master/estoque/produtos' },
+      { label: 'Categorias', routeLink: '/stock-master/estoque/categorias' },
+      { label: 'Entrada E Saida', routeLink: '/stock-master/estoque/movimentacoes' },
+      { label: 'Fornecedores', routeLink: '/stock-master/estoque/fornecedores' },
+      { label: 'Relatorio', routeLink: '/stock-master/estoque/relatorio' }
 
     ]
   },
@@ -38,41 +38,41 @@ export const navbarData : NavItem[] = [
     routeLink: '/vendas',
     icon: 'fal fa-chart-bar',
     label: 'VENDAS',
-    image: 'assets/icons/vendas-icon.png',
+    image: 'assets/icons/revenue.png',
     children: [
-      { routeLink : 'vendas/pedidos', label : 'Pedidos'},
-      { routeLink : 'vendas/clientes', label : 'Clientes'},
-      { routeLink : 'vendas/pagamentos', label : 'Pagamentos'},
-      { routeLink : 'vendas/nfe', label : 'NF-E'},
-      { routeLink : 'vendas/relatorio', label : 'Relatorio'}
+      { routeLink : '/stock-master/vendas/pedidos', label : 'Pedidos'},
+      { routeLink : '/stock-master/vendas/clientes', label : 'Clientes'},
+      { routeLink : '/stock-master/vendas/pagamentos', label : 'Pagamentos'},
+      { routeLink : '/stock-master/vendas/nfe', label : 'NF-E'},
+      { routeLink : '/stock-master/vendas/relatorio', label : 'Relatorio'}
 
     ]
   },
   {
-    routeLink: '/pdv',
+    routeLink: '/stock-master/pdv',
     icon: 'fal fa-tags',
     label: 'PDV',
-    image: 'assets/icons/pdv-icon.png',
+    image: 'assets/icons/business-automation.png',
   },
   {
     routeLink: '/administrador',
     icon: 'fal fa-file',
     label:'ADMINISTRADOR',
     expanded: false,
-    image: 'assets/icons/adm-icon.png',
+    image: 'assets/icons/security.png',
     children: [
-      { routeLink : 'aministracao/usuaario', label : 'Usuários'},
-      { routeLink : 'aministracao/logs', label : 'Logs de Sistema'},
-      { routeLink : 'aministracao/configuracao', label : 'Configuração'}
+      { routeLink : '/stock-master/aministrador/usuario', label : 'Usuários'},
+      { routeLink : '/stock-master/aministrador/logs', label : 'Logs de Sistema'},
+      { routeLink : '/stock-master/aministrador/configuracao', label : 'Configuração'}
 
     ]
   },
 
   {
-    routeLink: '/settings',
+    routeLink: '/stock-master/settings',
     icon: 'fal fa-cog',
     label: 'SETTINGS',
-    image: 'assets/icons/config-icon.png',
+    image: 'assets/icons/settings.png',
   }
 
 ];
