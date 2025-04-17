@@ -1,1 +1,43 @@
-<p>categorias works!</p>
+<div [ngClass]="{ 'com-sidebar': isSidebarOpen, 'sem-sidebar': !isSidebarOpen }" class="container">
+  <h2>Cadastro de Categorias</h2>
+
+  <!-- Cadastro de Categoria -->
+  <form (ngSubmit)="cadastrarCategoria()">
+    <input
+      type="text"
+      placeholder="Nome da Categoria"
+      [(ngModel)]="novaCategoria.name"
+      name="categoriaName"
+      required
+    />
+    <button type="submit">Cadastrar Categoria</button>
+  </form>
+
+  <hr />
+
+  <!-- Cadastro de Subcategoria -->
+  <form (ngSubmit)="cadastrarSubcategoria()">
+    <input
+      type="text"
+      placeholder="Nome da Subcategoria"
+      [(ngModel)]="novaSubcategoria.name"
+      name="subcategoriaName"
+      required
+    />
+
+    <select [(ngModel)]="novaSubcategoria.categoryId" name="categoriaSelect" required>
+      <option *ngFor="let cat of categorias" [value]="cat.id">{{ cat.name }}</option>
+    </select>
+
+    <button type="submit">Cadastrar Subcategoria</button>
+  </form>
+
+  <hr />
+
+  <!-- Listagem de Categorias -->
+  <button (click)="listarCategorias()">Listar Categorias</button>
+
+  <ul>
+    <li *ngFor="let cat of categorias">{{ cat.name }}</li>
+  </ul>
+</div>
