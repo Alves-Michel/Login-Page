@@ -14,12 +14,18 @@ export class CategoriaService {
   listarCategorias(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/categories/list`);
   }
+  listarSubCategorias(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/subCategory/list`);
+  }
 
-  cadastrarCategoria(categoria: { name: string }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/categories/register`, categoria);
+
+  cadastrarCategoria(categoria: any): Observable<any> {
+    return this.http.post('http://localhost:8080/categories/register', categoria, {
+      responseType: 'text'
+    });
   }
 
   cadastrarSubcategoria(subcategoria: { name: string, categoryId: string }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/categories/registerSubCategorias`, subcategoria);
+    return this.http.post(`${this.apiUrl}/subCategory/register`, subcategoria);
   }
 }

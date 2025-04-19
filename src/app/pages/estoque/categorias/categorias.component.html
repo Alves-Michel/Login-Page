@@ -10,7 +10,7 @@
       name="categoriaName"
       required
     />
-    <button type="submit">Cadastrar Categoria</button>
+    <button class = "cadastrarcategoria" type="submit">Cadastrar Categoria</button>
   </form>
 
   <hr />
@@ -26,18 +26,30 @@
     />
 
     <select [(ngModel)]="novaSubcategoria.categoryId" name="categoriaSelect" required>
-      <option *ngFor="let cat of categorias" [value]="cat.id">{{ cat.name }}</option>
+      <option value="" disabled selected>Selecione uma Categoria</option>
+      <option *ngFor="let cat of categorias" [value]="cat.id_category">{{ cat.name }}</option>
     </select>
 
-    <button type="submit">Cadastrar Subcategoria</button>
+    <button class = "cadastrarcategoria" type="submit">Cadastrar Subcategoria</button>
   </form>
 
   <hr />
 
   <!-- Listagem de Categorias -->
-  <button (click)="listarCategorias()">Listar Categorias</button>
+  <button class= "listar" (click)="listarSubCategorias()">Listar Categorias</button>
+  <button class = "fechar" (click)="fecharLista()">X</button>
+ <table *ngIf="mostrarTabela" border="1">
+  <thead>
+   <tr>
+    <th>Nome SubCategoria</th>
+    <th>Nome Categoria</th>
+   </tr>
+  </thead>
+    <tr *ngFor="let sub of subcategorias">
+     <td>{{ sub.name }}</td>
+     <td>{{ sub.categoryId }}</td>
+    </tr>
+</table>
 
-  <ul>
-    <li *ngFor="let cat of categorias">{{ cat.name }}</li>
-  </ul>
+
 </div>

@@ -33,6 +33,7 @@ h2 {
 }
 
 form {
+  width: 590px ;
   background-color: #fff;
   padding: 1.5rem;
   border-radius: 10px;
@@ -52,7 +53,7 @@ form {
     width: 100%;
   }
 
-  button {
+  button{
     align-self: flex-end;
     background-color: #ff6600;
     color: #fff;
@@ -67,7 +68,11 @@ form {
       background-color: #e65900;
     }
   }
+
+
 }
+
+
 
 hr {
   border: none;
@@ -75,7 +80,7 @@ hr {
   margin: 2rem 0;
 }
 
-button.listar {
+button.listar{
   background-color: transparent;
   color: #ff6600;
   border: 2px solid #ff6600;
@@ -96,3 +101,38 @@ button.listar {
 }
 
 
+table {
+  width: 558px;
+  background-color: transparent;
+  color: #ff6600;
+  border: 2px solid #ff6600;
+  border-collapse: collapse;
+  margin-top: 20px;
+
+}
+
+th, tr{
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+button.fechar{
+  margin-left: 360px;
+  background-color: #ff6600;
+  color: white ;
+  border: 2px solid #ff6600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background-color: white ;
+    color: #ff6600;
+  }
+  button.fechar:hover {
+    background-color: white;
+    color: #ff6600;
+  }
+}
