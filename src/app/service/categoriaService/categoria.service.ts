@@ -26,6 +26,8 @@ export class CategoriaService {
   }
 
   cadastrarSubcategoria(subcategoria: { name: string, categoryId: string }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/subCategory/register`, subcategoria);
+    return this.http.post('http://localhost:8080/subCategory/register', subcategoria,{
+      responseType: 'text'
+    });
   }
 }

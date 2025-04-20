@@ -47,7 +47,7 @@ export class CategoriasComponent implements OnInit {
 
   ngOnInit(): void {
     this.listarCategorias();
-   
+
 
   }
 
@@ -66,10 +66,18 @@ export class CategoriasComponent implements OnInit {
 
   cadastrarSubcategoria(): void {
     console.log("Subcategoria enviada:", this.novaSubcategoria);
-    this.categoriaService.cadastrarSubcategoria(this.novaSubcategoria).subscribe(() => {
+    this.categoriaService.cadastrarSubcategoria(this.novaSubcategoria).subscribe({
+      next: () => {
       this.novaSubcategoria.name = '';
       this.novaSubcategoria.categoryId = '';
-    });
+      console.log("sucesso!")
+      this.toastService.success("SubCategoria Cadastrada com Sucesso");
+    },
+    error: () =>
+      this.toastService.error("SubCategoria Já existe")
+    }
+
+    );
   }
 
   listarCategorias(): void {

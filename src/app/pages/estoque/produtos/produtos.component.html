@@ -1,1 +1,80 @@
-<p>produtos works!</p>
+<main>
+<div
+  [ngClass]="{ 'com-sidebar': isSidebarOpen, 'sem-sidebar': !isSidebarOpen }"
+  class="container"
+>
+  <h2>Cadastro de Produtos</h2>
+
+  <!-- WRAPPER FLEX -->
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+
+    <!-- FORMULÁRIO -->
+    <form [formGroup]="produtoForm" (ngSubmit)="cadastrarProduto()" style="flex: 1; min-width: 300px;">
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Nome do Produto" />
+
+      <input
+        type="text"
+        formControlName="price"
+        placeholder="Preço"
+        mask="separator.2"
+        thousandSeparator="."
+        decimalMarker=","
+        prefix="R$ "
+        [dropSpecialCharacters]="false" />
+
+      <input
+        type="number"
+        formControlName="amount"
+        placeholder="Quantidade" />
+
+      <textarea
+        formControlName="describe"
+        placeholder="Descrição (opcional)">
+      </textarea>
+
+      <select formControlName="subcategoryId">
+        <option value="">Selecione uma Subcategoria</option>
+        <option *ngFor="let sub of subcategorias" [value]="sub.subCategoryId">
+          {{ sub.name }}
+        </option>
+      </select>
+
+      <div *ngIf="produtoForm.get('subcategoryId')?.invalid && produtoForm.get('subcategoryId')?.touched">
+        <!-- Mensagem de erro aqui se quiser -->
+      </div>
+
+      <button type="submit">Cadastrar Produto</button>
+    </form>
+
+    <!-- TABELA -->
+    <div style="max-height: 750px; overflow-y: auto;">
+      <button class="listar" (click)="listarProduto()">Listar Produtos</button>
+      <button class="fechar" (click)="fecharLista()">X</button>
+
+      <table *ngIf="mostrarTabela" border="1">
+        <thead>
+          <tr>
+            <th>Nome Produtos</th>
+            <th>Nome Preço</th>
+            <th>Nome Amount</th>
+            <th>Nome derscribe</th>
+            <th>Nome Subcategoria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pro of produtos">
+            <td>{{ pro.name }}</td>
+            <td>{{ pro.price }}</td>
+            <td>{{ pro.amount }}</td>
+            <td>{{ pro.describe }}</td>
+            <td>{{ pro.subcategoryId }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</main>
