@@ -1,24 +1,34 @@
-<div class="container">
-  <h2>🔍 Buscar Produtos</h2>
+<div class="scroll-container">
+  <input
+    type="text"
+    [(ngModel)]="termoBuscar"
+    (input)="onInputChange($event)"
+    placeholder="Buscar produto por nome ou descrição..."
+    class="input-busca"
+  />
 
-  <div class="form-group">
-    <input
-      [(ngModel)]="termoBuscar"
-      (input)="onInputChange($event)"
-      type="text"
-      placeholder="Digite o nome do produto..."
-      class="input"
-    />
-  </div>
+  <table *ngIf="produtos.length > 0" border="1">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Descrição</th>
+        <th>Subcategoria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pro of produtos">
+        <td>{{ pro.name }}</td>
+        <td class="currency">{{ pro.price | currency:'BRL' }}</td>
+        <td>{{ pro.amount }}</td>
+        <td>{{ pro.describe }}</td>
+        <td>{{ pro.subcategoryId }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <ul class="product-list" *ngIf="produtos.length > 0">
-    <li *ngFor="let produto of produtos" class="product-card">
-      <h3>{{ produto.name }}</h3>
-      <p>{{ produto.describe }}</p>
-      <p><strong>Preço:</strong> R$ {{ produto.price }}</p>
-      <p><strong>Estoque:</strong> {{ produto.amount }}</p>
-    </li>
-  </ul>
-
-  <p *ngIf="produtos.length === 0 && termoBuscar">Nenhum produto encontrado.</p>
+  <p *ngIf="produtos.length === 0 && termoBuscar.trim() !== ''">
+    Nenhum produto encontrado.
+  </p>
 </div>

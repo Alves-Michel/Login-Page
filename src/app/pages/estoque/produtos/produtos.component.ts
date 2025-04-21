@@ -118,18 +118,11 @@ export class ProdutosComponent implements OnInit {
     }
 
 
-    listarProduto(): void {
-      this.produtoService.listarProduto().subscribe((data) =>{
-        this.produtos = data;
-        this.mostrarTabela = true;
-      })
-    }
+
 
     toggleSidebar(): void {
       this.isSidebarOpen = !this.isSidebarOpen;
     }
 
-    fecharLista(){
-      this.mostrarTabela = false;
-    }
+    
 }

@@ -11,11 +11,17 @@
 .container {
   transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
   padding: 2rem;
-  margin-left: 250px; // Largura padrão da sidebar aberta
-  width: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+  align-items:self-start;
+
+  &.com-sidebar {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+  }
 
   &.sem-sidebar {
-    margin-left: 70px; // Largura da sidebar fechada
+    margin-left: 70px;
     width: calc(100% - 70px);
   }
 
@@ -70,6 +76,13 @@ form {
 
     &:hover {
       background-color: #e65900;
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 1rem;
+    button {
+      align-self: center; // Centraliza botão em telas menores
+      width: 100%;
     }
   }
 

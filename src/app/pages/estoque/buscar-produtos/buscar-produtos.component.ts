@@ -27,6 +27,10 @@ export class BuscarProdutosComponent {
     ){}
 
     ngOnInit(){
+
+      this.listarProduto();
+
+
         this.buscaSubject.pipe(
           debounceTime(400),
           distinctUntilChanged()
@@ -34,13 +38,16 @@ export class BuscarProdutosComponent {
           if(valor.trim().length > 0){
             this.buscar(valor);
           }else{
-            this.produtos = [];
+            this.listarProduto();
           }
         })
     }
 
     onInputChange(event: any) {
       this.buscaSubject.next(this.termoBuscar);
+      if(this.termoBuscar.trim().length === 0){
+        return this.listarProduto();
+      }
     }
 
 
@@ -51,6 +58,17 @@ export class BuscarProdutosComponent {
         },
         error: (err) => {
           console.error('Erro ao buscar produtos:', err);
+        }
+      });
+    }
+
+    listarProduto() {
+      this.produtoService.listarProduto().subscribe({
+        next: (produtos) => {
+          this.produtos = produtos;
+        },
+        error: (err) => {
+          console.error('Erro ao listar produtos:', err);
         }
       });
     }

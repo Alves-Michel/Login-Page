@@ -49,31 +49,6 @@
       <button type="submit">Cadastrar Produto</button>
     </form>
 
-    <!-- TABELA -->
-    <div style="max-height: 750px; overflow-y: auto;">
-      <button class="listar" (click)="listarProduto()">Listar Produtos</button>
-      <button class="fechar" (click)="fecharLista()">X</button>
-
-      <table *ngIf="mostrarTabela" border="1">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Quantidade</th>
-            <th>Descrição</th>
-            <th>Subcategoria</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let pro of produtos">
-            <td>{{ pro.name }}</td>
-            <td class="currency">{{ pro.price | currency:'BRL' }}</td>
-            <td>{{ pro.amount }}</td>
-            <td>{{ pro.describe }}</td>
-            <td>{{ pro.subcategoryId }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  
   </div>
 </div>

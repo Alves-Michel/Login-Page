@@ -37,7 +37,8 @@ h2 {
 }
 
 form {
-  width: 590px ;
+  width: 100%;
+  max-width: 760px;
   background-color: #A9D0F5;
   padding: 1.5rem;
   border-radius: 10px;
@@ -105,65 +106,4 @@ button.listar{
 }
 
 
-table {
-  width: 100%; /* Ajusta a largura para ocupar toda a área disponível */
-  max-width: 800px; /* Define uma largura máxima para evitar tabelas muito largas */
-  margin: 20px auto; /* Centraliza a tabela na página */
-  border-collapse: collapse; /* Remove espaços entre as células */
-  font-family: Arial, sans-serif; /* Usa uma fonte moderna e legível */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil para dar profundidade */
-  background-color: #DDDDDD; /* Fundo branco para contrastar com o texto */
-  color: #333; /* Cor de texto mais suave e fácil de ler */
-  border-radius: 8px; /* Borda arredondada para um visual moderno */
-  overflow: hidden; /* Garante que o arredondamento funcione em navegadores */
-}
 
-thead {
-  background-color: #FF6600; /* Um tom de laranja claro e vibrante para o cabeçalho */
-  color: white; /* Texto branco no cabeçalho para contraste */
-}
-
-th, td {
-  padding: 12px 16px; /* Espaçamento interno maior para melhor legibilidade */
-  text-align: left; /* Alinhamento à esquerda para um visual mais natural */
-  border-bottom: 1px solid #A9D0F5; /* Linhas horizontais sutis em um tom de laranja claro */
-}
-
-th {
-  font-weight: bold; /* Negrito para os cabeçalhos */
-  letter-spacing: 0.5px; /* Espaçamento entre letras para um visual mais elegante */
-}
-
-tr:hover {
-  background-color: #87CEEB; /* Efeito de hover em um tom de laranja bem claro */
-  transition: background-color 0.3s ease; /* Transição suave para o efeito hover */
-}
-
-tbody tr:last-child td {
-  border-bottom: none; /* Remove a borda inferior da última linha */
-}
-
-button.fechar{
-  margin-left: 480px;
-  background-color: #FF6600;
-  color: white ;
-  border: 2px solid #FF6600;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  &:hover {
-    background-color: white ;
-    color: #FF6600;
-  }
-  button.fechar:hover {
-    background-color: white;
-    color: #FF6600;
-  }
-
-  .currency {
-    font-weight: bold;
-    color: #FF6600; /* Laranja */
-  }
-}
