@@ -1,13 +1,11 @@
-@import "/src/styles/variables.scss";
-body{
-  background-color: $color-secondary;
-}
+
+
 :host {
   display: flex;
   justify-content: center;
   padding: 2rem;
   font-family: 'Segoe UI', sans-serif;
-  background-color: $color-secondary;
+  background: linear-gradient(135deg, #A9D0F5, #87CEEB);
 }
 
 .container {
@@ -29,17 +27,21 @@ body{
 
 h2 {
   font-size: 1.8rem;
-  color: $primary-color;
+  color: #FF6600; /* Cor do texto laranja */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra suave preta */
+  padding: 0.5rem 1rem; /* Espaçamento interno para destacar o texto */
+  border-radius: 8px; /* Bordas arredondadas para um visual moderno */
   margin-bottom: 1.5rem;
-  text-transform: uppercase;
+  text-transform: uppercase; /* Transforma o texto em maiúsculas */
+  display: inline-block; /* Permite que a borda envolva apenas o texto */
 }
 
 form {
   width: 590px ;
-  background-color: $color-secondary;
+  background-color: #A9D0F5;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   margin-bottom: 1.5rem;
 
   display: flex;
@@ -49,7 +51,7 @@ form {
   input,
   select {
     padding: 0.75rem 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #DDDDDD;
     border-radius: 8px;
     font-size: 1rem;
     width: 100%;
@@ -57,7 +59,7 @@ form {
 
   button{
     align-self: flex-end;
-    background-color: $primary-color;
+    background-color: #FF6600;
     color: #fff;
     border: none;
     padding: 0.6rem 1.2rem;
@@ -78,14 +80,14 @@ form {
 
 hr {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #DDDDDD;
   margin: 2rem 0;
 }
 
 button.listar{
-  background-color: transparent;
-  color: $primary-color;
-  border: 2px solid $primary-color;
+  background-color: #FF6600;
+  color: white ;
+  border: 2px solid #FF6600;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   font-weight: 600;
@@ -93,37 +95,59 @@ button.listar{
   transition: all 0.3s;
 
   &:hover {
-    background-color: $primary-color;
+    background-color: #FF6600;
     color: white;
   }
   button.listar:hover {
-    background-color: $primary-color;
+    background-color: #FF6600;
     color: white;
   }
 }
 
 
 table {
-  width: 760px;
-  background-color: $primary-color;
-  color: white;
-  border: 2px solid black;
-  border-collapse: collapse;
-  margin-top: 20px;
-
+  width: 100%; /* Ajusta a largura para ocupar toda a área disponível */
+  max-width: 800px; /* Define uma largura máxima para evitar tabelas muito largas */
+  margin: 20px auto; /* Centraliza a tabela na página */
+  border-collapse: collapse; /* Remove espaços entre as células */
+  font-family: Arial, sans-serif; /* Usa uma fonte moderna e legível */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil para dar profundidade */
+  background-color: #DDDDDD; /* Fundo branco para contrastar com o texto */
+  color: #333; /* Cor de texto mais suave e fácil de ler */
+  border-radius: 8px; /* Borda arredondada para um visual moderno */
+  overflow: hidden; /* Garante que o arredondamento funcione em navegadores */
 }
 
-th, tr{
-  padding: 8px;
-  text-align: center;
-  border: 1px solid #ccc;
+thead {
+  background-color: #FF6600; /* Um tom de laranja claro e vibrante para o cabeçalho */
+  color: white; /* Texto branco no cabeçalho para contraste */
+}
+
+th, td {
+  padding: 12px 16px; /* Espaçamento interno maior para melhor legibilidade */
+  text-align: left; /* Alinhamento à esquerda para um visual mais natural */
+  border-bottom: 1px solid #A9D0F5; /* Linhas horizontais sutis em um tom de laranja claro */
+}
+
+th {
+  font-weight: bold; /* Negrito para os cabeçalhos */
+  letter-spacing: 0.5px; /* Espaçamento entre letras para um visual mais elegante */
+}
+
+tr:hover {
+  background-color: #87CEEB; /* Efeito de hover em um tom de laranja bem claro */
+  transition: background-color 0.3s ease; /* Transição suave para o efeito hover */
+}
+
+tbody tr:last-child td {
+  border-bottom: none; /* Remove a borda inferior da última linha */
 }
 
 button.fechar{
   margin-left: 480px;
-  background-color: $primary-color;
+  background-color: #FF6600;
   color: white ;
-  border: 2px solid $primary-color;
+  border: 2px solid #FF6600;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   font-weight: 600;
@@ -131,10 +155,15 @@ button.fechar{
   transition: all 0.3s;
   &:hover {
     background-color: white ;
-    color: $primary-color;
+    color: #FF6600;
   }
   button.fechar:hover {
     background-color: white;
-    color: $primary-color;
+    color: #FF6600;
+  }
+
+  .currency {
+    font-weight: bold;
+    color: #FF6600; /* Laranja */
   }
 }

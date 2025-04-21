@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>🔍 Buscar Produtos</h2>
+
+  <div class="form-group">
+    <input
+      [(ngModel)]="termoBuscar"
+      (input)="onInputChange($event)"
+      type="text"
+      placeholder="Digite o nome do produto..."
+      class="input"
+    />
+  </div>
+
+  <ul class="product-list" *ngIf="produtos.length > 0">
+    <li *ngFor="let produto of produtos" class="product-card">
+      <h3>{{ produto.name }}</h3>
+      <p>{{ produto.describe }}</p>
+      <p><strong>Preço:</strong> R$ {{ produto.price }}</p>
+      <p><strong>Estoque:</strong> {{ produto.amount }}</p>
+    </li>
+  </ul>
+
+  <p *ngIf="produtos.length === 0 && termoBuscar">Nenhum produto encontrado.</p>
+</div>

@@ -28,7 +28,7 @@ export const navbarData : NavItem[] = [
     children: [
       { label: 'Produtos', routeLink: '/stock-master/estoque/produtos' },
       { label: 'Categorias', routeLink: '/stock-master/estoque/categorias' },
-      { label: 'Entrada E Saida', routeLink: '/stock-master/estoque/movimentacoes' },
+      { label: 'Buscar e Listar', routeLink: '/stock-master/estoque/buscar-produtos' },
       { label: 'Fornecedores', routeLink: '/stock-master/estoque/fornecedores' },
       { label: 'Relatorio', routeLink: '/stock-master/estoque/relatorio' }
 

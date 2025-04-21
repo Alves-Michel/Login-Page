@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, LOCALE_ID, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { ProdutoService } from '../../../service/produtoService/produto.service';
@@ -24,6 +24,7 @@ import { NgxMaskDirective } from 'ngx-mask';
   ],
   providers:[
     ProdutoService
+
   ],
   templateUrl: './produtos.component.html',
   styleUrls: ['./produtos.component.scss']

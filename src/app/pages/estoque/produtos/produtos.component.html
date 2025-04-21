@@ -1,4 +1,4 @@
-<main>
+
 <div
   [ngClass]="{ 'com-sidebar': isSidebarOpen, 'sem-sidebar': !isSidebarOpen }"
   class="container"
@@ -57,17 +57,17 @@
       <table *ngIf="mostrarTabela" border="1">
         <thead>
           <tr>
-            <th>Nome Produtos</th>
-            <th>Nome Preço</th>
-            <th>Nome Amount</th>
-            <th>Nome derscribe</th>
-            <th>Nome Subcategoria</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Descrição</th>
+            <th>Subcategoria</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let pro of produtos">
             <td>{{ pro.name }}</td>
-            <td>{{ pro.price }}</td>
+            <td class="currency">{{ pro.price | currency:'BRL' }}</td>
             <td>{{ pro.amount }}</td>
             <td>{{ pro.describe }}</td>
             <td>{{ pro.subcategoryId }}</td>
@@ -77,4 +77,3 @@
     </div>
   </div>
 </div>
-</main>

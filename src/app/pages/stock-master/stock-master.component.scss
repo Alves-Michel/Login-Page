@@ -1,10 +1,8 @@
+// Variáveis globais
 @import "../../../styles/variables.scss";
 
-.scroll {
-  height: 100vh;
-  overflow-y: auto;
-}
 
+// Estilo da sidebar
 .sidenav {
   background-color: $primary-color;
   width: 250px;
@@ -71,6 +69,7 @@
 
     .sidenav-nav-item {
       margin-bottom: 1rem;
+
       .sidenav-nav-link {
         display: flex;
         align-items: center;
@@ -83,7 +82,7 @@
         &.active {
           border-radius: 20px;
           color: $text-color;
-          background-color:$gray-second-bg;
+          background-color: $gray-second-bg;
         }
 
         .link-icon-img {
@@ -102,56 +101,45 @@
         }
 
         .sidenav-link-text {
-
           flex: 1;
         }
       }
 
+      .submenu-item {
+        padding-left: 2rem;
+        list-style-type: none;
 
+        .sidenav-nav-link {
+          padding: 0.5rem 1rem;
+          font-size: 14px;
 
-          .submenu-item {
-            padding-left: 2rem;
-            list-style-type: none;
-            .sidenav-nav-link {
-              padding: 0.5rem 1rem;
-              font-size: 14px;
+          &:hover,
+          &.active {
+            border-radius: 12px;
+            color: $text-color;
+            background-color: $gray-second-bg;
+          }
 
-              &:hover,
-              &.active {
-                border-radius: 12px;
-                color: $text-color;
-                background-color:$gray-second-bg;
-              }
-
-              .sidenav-link-text {
-                font-size: 0.9rem;
-                margin-left: 15px;
-              }
-            }
+          .sidenav-link-text {
+            font-size: 0.9rem;
+            margin-left: 15px;
+          }
         }
       }
     }
   }
 
-
-// Responsivo
-@media (max-width: 768px) {
-  .sidenav {
+  // Responsivo
+  @media (max-width: 768px) {
     position: absolute;
     z-index: 1001;
     height: 100vh;
   }
 }
 
-// Animação
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    }
-  }
-
+// Scroll
+.scroll {
+  height: 100vh;
+  overflow-y: auto;
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+}

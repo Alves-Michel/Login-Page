@@ -29,7 +29,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/estoque/categorias/categorias.component').then(m => m.CategoriasComponent)
       },
-      // outros filhos aqui...
+      {
+      path: 'estoque/buscar-produtos',
+      loadComponent: () =>
+        import('./pages/estoque/buscar-produtos/buscar-produtos.component').then(m => m.BuscarProdutosComponent)
+     },
     ]
   }
 ];

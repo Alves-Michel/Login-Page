@@ -14,7 +14,7 @@
   </form>
 
   <hr />
-
+  <h2>Cadastro de SubCategorias</h2>
   <!-- Cadastro de Subcategoria -->
   <form (ngSubmit)="cadastrarSubcategoria()">
     <input
@@ -36,6 +36,7 @@
   <hr />
 
   <!-- Listagem de Categorias -->
+  <div class="list-container">
   <button class= "listar" (click)="listarSubCategorias()">Listar Categorias</button>
   <button class = "fechar" (click)="fecharLista()">X</button>
  <table *ngIf="mostrarTabela" border="1">
@@ -50,6 +51,6 @@
      <td>{{ sub.categoryId }}</td>
     </tr>
 </table>
-
+  </div>
 
 </div>
