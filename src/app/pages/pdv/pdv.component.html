@@ -1,0 +1,84 @@
+<div class="venda-container">
+  <!-- Topo com data, nome da empresa e usuário -->
+  <header class="header-bar">
+    <!--<div>{{ currentDate | date: 'HH:mm - dd/MM/yyyy' }}</div>-->
+    <div class="empresa-nome">EMPRESA ABC<br>TESTE</div>
+    <div class="usuario-info">
+      <span class="icon-user"></span> <!--{{username}}-->
+      <span class="config-icon"></span>
+    </div>
+  </header>
+
+  <div class="conteudo-venda">
+    <!-- Coluna da esquerda com botões -->
+    <aside class="acoes">
+      <button (click)="finalizeSale()" class="btn finalizar">FINALIZAR VENDA</button>
+      <button (click)="buscar()" [disabled]="!searchForm.get('barcode')?.value"
+          class="btn adicionar">ADICIONAR PRODUTO</button>
+      <button (click)="cancelSale()" class="btn cancelar">CANCELAR</button>
+    </aside>
+
+    <!-- Coluna da direita com input e carrinho -->
+    <section class="venda-area">
+      <!-- Campo de leitura de código de barras -->
+     <form [formGroup]="searchForm" (ngSubmit)="buscar()">
+  <input type="text" formControlName="barcode" placeholder="Código de barras" />
+  <button type="submit">Buscar</button>
+</form>
+
+      <h2 class="titulo-venda">
+        <span class="icon-nova-venda">➕✔️</span> Nova venda
+      </h2>
+
+      <!-- Lista de produtos adicionados -->
+      <table class="tabela-produtos">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Cód.</th>
+            <th>Name</th>
+            <th>Vl. Un.</th>
+            <th>Qtd.</th>
+            <th>Vl. Total</th>
+          </tr>
+        </thead>
+        <tbody>
+       <tr *ngFor="let item of cart; let i = index">
+            <td>{{ i + 1 }}</td>
+
+            <td>{{ item.product.name_product }}</td>
+            <td>{{ item.amount_item }}</td>
+            <td>{{ item.priceUnityItem }}</td>
+            <td>
+      <button (click)="updateQuantity(i, -1)">-</button>
+      {{ item.amount_item }}
+      <button (click)="updateQuantity(i, 1)">+</button>
+    </td>
+    <td>{{ item.subTotalItem  }}</td>
+  </tr>
+</tbody>
+      </table>
+    </section>
+  </div>
+
+  <!-- Rodapé com total e resumo -->
+  <footer class="rodape-venda">
+    <div class="resumo-produto">
+      <div >
+        <strong>Descrição:</strong> {{ cart[0]?.product?.id_product }} - {{ cart[0]?.product?.name_product }}
+      </div>
+      <div>
+        <strong>Valor unitário:</strong> {{ cart[0]?.product?.price_product }}
+      </div>
+      <div>
+        <strong>Quantidade:</strong> {{ cart[0]?.amount_item }}
+      </div>
+    </div>
+    <div class="resumo-rodape">
+      <div>Itens: {{ cart.length }}</div>
+      <div class="total-geral" style="margin-top: 1rem; font-weight: bold;">
+  Total da venda: {{ total }}
+</div>
+    </div>
+  </footer>
+</div>

@@ -1,22 +1,28 @@
 /* Centraliza e organiza o conteúdo da div externa */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Bloqueia scroll da página inteira */
+}
 :host {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 100px; /* espaço para a sidebar */
-  min-height: 100vh;
-  background: linear-gradient(135deg, #A9D0F5, #87CEEB);
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  overflow: hidden;
   font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #A9D0F5, #87CEEB);
 }
 
 /* Container com rolagem */
 .scroll-container {
   max-height: 750px;
-  overflow-y: auto;
+  overflow: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 /* Input centralizado */
@@ -29,6 +35,7 @@
   font-size: 1.2rem;
   padding: 0.5rem;
   transition: border-color 0.3s;
+
 }
 
 .input-busca:focus {

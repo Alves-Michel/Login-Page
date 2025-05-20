@@ -33,7 +33,14 @@ export const routes: Routes = [
       path: 'estoque/buscar-produtos',
       loadComponent: () =>
         import('./pages/estoque/buscar-produtos/buscar-produtos.component').then(m => m.BuscarProdutosComponent)
-     },
+     }
+
     ]
-  }
+  },
+   {
+      path: 'pdv',
+      canActivate: [authGuard],
+      loadComponent: () =>
+        import('./pages/pdv/pdv.component').then(m => m.PdvComponent)
+     },
 ];

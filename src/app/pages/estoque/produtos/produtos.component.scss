@@ -3,7 +3,9 @@
 :host {
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  align-items: flex-start;
+  height: 100vh;
+  overflow: hidden;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #A9D0F5, #87CEEB);
 }

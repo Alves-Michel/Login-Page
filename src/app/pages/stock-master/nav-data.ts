@@ -49,7 +49,7 @@ export const navbarData : NavItem[] = [
     ]
   },
   {
-    routeLink: '/stock-master/pdv',
+    routeLink: '/pdv',
     icon: 'fal fa-tags',
     label: 'PDV',
     image: 'assets/icons/business-automation.png',
